@@ -29,7 +29,7 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
       <article className={styles.article}>
-        <div id="widget" style={{padding: "20px", maxWidth: "500px"}}></div>
+        <div id="widget" style={{padding: "20px", maxWidth: "500px"}} data-topic-id={postData.topicId}></div>
         <div>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
