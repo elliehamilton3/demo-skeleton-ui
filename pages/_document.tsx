@@ -13,7 +13,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script src="https://demo-widget2.netlify.app/widget.js"></script>
+          {/* <script src="https://demo-widget2.netlify.app/widget.js"></script> */}
         </body>
       </Html>
     )

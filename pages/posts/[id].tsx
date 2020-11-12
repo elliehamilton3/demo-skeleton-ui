@@ -5,6 +5,7 @@ import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import styles from './post.module.css';
+import { useEffect } from "react";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
@@ -23,6 +24,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default function Post({ postData }) {
+  useEffect(() => {
+    const script = document.createElement('script');
+  
+    script.src = "https://demo-widget2.netlify.app/widget.js";
+    script.async = true;
+  
+    document.body.appendChild(script);
+  
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
   return (
     <Layout>
       <Head>
